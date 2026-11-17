@@ -1,0 +1,45 @@
+name: MorniMaibaumklau
+version: '${project.version}'
+main: de.moinmorni.maibaumklau.MaibaumklauPlugin
+api-version: '1.21'
+description: Maibaumklau für das MoinMorni-Netzwerk – zwei Dörfer, zwei Maibäume, wer klaut zuerst? 2 bis 16 Leute.
+authors: [MoinMorni]
+website: https://moinmorni.net
+# Läuft mit dem Netzwerk-Plugin (Sprache, Party, Statistik) und auch allein.
+softdepend: [MoinMorni]
+
+commands:
+  maibaumadmin:
+    description: Verwaltung (info, status, start, vorspulen, stopp, wiederherstellen, neubauen, neuladen)
+    usage: /maibaumadmin <info|status|start [karte]|vorspulen <los|ende|sekunden> [karte]|stopp [karte]|wiederherstellen|neubauen|neuladen>
+    aliases: [mbadmin, maibaumklau]
+    permission: moinmorni.maibaumklau.admin
+  karte:
+    description: Über die Karte abstimmen
+    usage: /karte [bachdoerfer|almdoerfer]
+    aliases: [map, vote]
+  bereit:
+    description: Im Wirtsgarten bereit melden
+    usage: /bereit
+    aliases: [ready]
+  zuschauen:
+    description: Einer Runde zuschauen
+    usage: /zuschauen [spieler|karte]
+    aliases: [spectate, spec]
+  verlassen:
+    description: Runde oder Zuschauen verlassen (zurück in den Wirtsgarten)
+    usage: /verlassen
+    aliases: [leave]
+  stats:
+    description: Statistik ansehen
+    usage: /stats [spieler]
+    aliases: [statistik]
+  top:
+    description: Die besten Maibaumdiebe
+    usage: /top
+    aliases: [bestenliste, leaderboard]
+
+permissions:
+  moinmorni.maibaumklau.admin:
+    description: Maibaumklau verwalten und im Kreativmodus in der Maibaumklau-Welt bauen
+    default: op
