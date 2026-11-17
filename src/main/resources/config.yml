@@ -1,0 +1,62 @@
+# Morni Maibaumklau – Einstellungen. Nach Änderungen: /maibaumadmin neuladen (oder Server neu starten).
+# Gilt für die nächste Runde; eine laufende Runde spielt mit den alten Werten zu Ende.
+
+# Zurück ins Spiel: Verliert jemand mitten in einer Runde die Verbindung (zum Beispiel, weil das Spiel abstürzt), bleibt
+# sein Platz im Dorf so viele Sekunden frei. Kommt er rechtzeitig wieder (direkt oder über „Zurück ins Spiel“ in der
+# Lobby), spielt er im selben Dorf weiter; sonst ist er raus. Wer gerade einen Maibaum trug, legt ihn dabei ab.
+# 0 = aus (0–600).
+rueckkehr-sekunden: 90
+
+# Eigene leere Welt für den Wirtsgarten und die Karten (wird beim ersten Start angelegt und gebaut).
+welt: maibaumklau
+
+wirtsgarten:
+  # So lange läuft der Countdown im Wirtsgarten, bevor eine Runde startet (3–300).
+  # Sagen alle „bereit“, geht es nach 5 Sekunden los.
+  countdown-sekunden: 30
+  # Ab so vielen Leuten beginnt der Countdown von selbst (2–16; sonst, sobald jemand „bereit“ ist).
+  # Gespielt wird ab zwei Leuten – jedes Dorf braucht mindestens einen.
+  mindestens-spieler: 4
+
+runde:
+  # Höchstens so viele Leute je Dorf (1–8) – eine Runde hat also höchstens doppelt so viele.
+  hoechstens-je-dorf: 8
+  # So lange stehen zum Start alle vor ihrem Wirtshaus, bevor es losgeht (3–30 Sekunden).
+  start-sekunden: 5
+  # Spielzeit in Minuten (2–30). Bringt bis dahin kein Dorf den fremden Baum heim, gewinnen die Punkte.
+  minuten: 8
+  # Nach dem Ende: so lange dauert das Auslösen (Brotzeit für die Sieger), dann geht es zurück in den
+  # Wirtsgarten (5–60 Sekunden).
+  nachspiel-sekunden: 12
+
+maibaum:
+  # So viele Sekunden braucht einer allein, um den fremden Baum umzulegen (2–60). Zu zweit geht es doppelt so schnell,
+  # ab drei Leuten dreimal so schnell. Jede Wache des anderen Dorfs am Baum hält einen auf: stehen gleich viele Wachen
+  # dabei, geht nichts voran.
+  umlegen-sekunden: 8
+  # Ein abgelegter Baum gilt nach so vielen Sekunden wieder als zurück und steht dann wieder im Dorf (3–120).
+  # Steht jemand aus seinem Dorf daneben, geht es doppelt so schnell, ab zwei Wachen dreimal so schnell.
+  zurueck-sekunden: 20
+  # Tempo der Träger (Anteil des normalen Tempos): allein so langsam (0.2–1.0) …
+  tempo-allein: 0.55
+  # … jeder weitere Träger macht es um so viel schneller (0–0.5) …
+  tempo-je-traeger: 0.12
+  # … aber nie schneller als das (tempo-allein bis 1.0).
+  tempo-hoechstens: 0.9
+  # true: Ein Dorf darf den fremden Baum nur heimbringen, wenn sein eigener Baum gerade steht.
+  eigener-baum-muss-stehen: false
+
+hilfen:
+  # Sprint-Brotzeit: so viele Sekunden schneller (1–20) …
+  brotzeit-sekunden: 4
+  # … und so lange Pause bis zur nächsten (3–120 Sekunden).
+  brotzeit-pause: 20
+  # Heuballen-Sprung: so lange Pause bis zum nächsten Satz (3–120 Sekunden).
+  heusprung-pause: 12
+  # Leitern je Leben (0–16; nach dem Abfangen gibt es wieder volle) …
+  leitern: 4
+  # … und so lange halten sie, bevor sie wieder verschwinden (5–300 Sekunden).
+  leiter-sekunden: 30
+  # Wer abgefangen wurde, verschnauft so lange vor dem Wirtshaus: kann nicht abgefangen werden, fängt nicht ab und
+  # trägt nicht (0–15 Sekunden).
+  verschnauf-sekunden: 3
